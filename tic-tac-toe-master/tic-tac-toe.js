@@ -2,6 +2,8 @@ window.onload = function() {
     var squares = document.querySelectorAll("#board div");
     for (let a=0; a <= squares.length; a++){
         squares[a].classList.add("square");
+        squares[a].onmouseover = function(){squares[a].classList.toggle("hover",true)}
+        squares[a].onmouseout = function(){squares[a].classList.toggle("hover",false)}
         squares[a].onclick = function(){
             if (squares[a].innerHTML === "" || squares[a].innerHTML === "O"){
                 squares[a].classList.toggle("O",false)
